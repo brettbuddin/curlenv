@@ -1,0 +1,5 @@
+!.envrc
+.curlenv.envrc
+.localrc
+env/*_local.envrc
+env/*.secret.envrc

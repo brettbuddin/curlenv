@@ -1,0 +1,12 @@
+no-progress-meter
+
+header "Accept: application/json"
+
+variable "%EXAMPLE_HEADER"
+expand-header "Precurl: {{EXAMPLE_HEADER}}"
+
+variable "%EXAMPLE_SCHEME"
+variable "%EXAMPLE_HOSTPORT"
+expand-url "{{EXAMPLE_SCHEME}}://{{EXAMPLE_HOSTPORT}}/anything"
+
+json @-
