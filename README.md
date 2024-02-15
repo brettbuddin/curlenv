@@ -5,6 +5,8 @@ Environments are just collections of shell environment variables that are manage
 
 It aims to be a simple command-line alternative to [Postman](https://www.postman.com) that directly leverages well known tools.
 
+⚠️  This project uses direnv's `source_env` and `source_env_if_exists` functions to apply environment files. These functions are [documented](https://direnv.net/man/direnv-stdlib.1.html) as not using direnv's security framework. This is a potential attack vector, and means you must trust repository committers and audit changes to environments in contributions.
+
 ## Template
 
 This a template repository and meant to be cloned as a starting point for your own project. In GitHub you can click the
