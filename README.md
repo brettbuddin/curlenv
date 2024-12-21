@@ -5,9 +5,11 @@ Environments are just collections of shell environment variables that are manage
 
 It aims to be a simple command-line alternative to [Postman](https://www.postman.com) that directly leverages well known tools.
 
-**It's recommended you use curl v8.7.0 or greater.** curl v8.7.0 fixed a bug ([curl/curl@0f0edc2](https://github.com/curl/curl/commit/0f0edc283c340e8ddddc763b48d2f835b2270ab4)) where curl would not fail when it encountered a missing environment variable.
+> [!IMPORTANT]
+# **It's recommended you use curl v8.7.0 or greater.** curl v8.7.0 fixed a bug ([curl/curl@0f0edc2](https://github.com/curl/curl/commit/0f0edc283c340e8ddddc763b48d2f835b2270ab4)) where curl would not fail when it encountered a missing environment variable.
 
-⚠️  This project uses direnv's `source_env` and `source_env_if_exists` functions to apply environment files. These functions are [documented](https://direnv.net/man/direnv-stdlib.1.html) as not using direnv's security framework. This is a potential attack vector, and means you must trust repository committers and audit changes to environments in contributions.
+> [!WARNING]
+> This project uses direnv's `source_env` and `source_env_if_exists` functions to apply environment files. These functions are [documented](https://direnv.net/man/direnv-stdlib.1.html) as not using direnv's security framework. This is a potential attack vector, and means you must trust repository committers and audit changes to environments in contributions.
 
 ## Template
 
