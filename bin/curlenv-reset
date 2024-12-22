@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #
-# Usage: curlenv-switch <environment>
+# Usage: curlenv-reset
 
 set -euo pipefail
 
-log() { echo "curlenv-switch: $*"; }
+log() { echo "curlenv-reset: $*"; }
 log_err() { log "$*" 1>&2; }
 
 [[ -x "$(command -v direnv)" ]] || (log_err "direnv not found" && exit 1)
