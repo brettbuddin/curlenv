@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+#
+# Usage: curlenv-switch <environment>
+
+set -euo pipefail
+
+log() { echo "curlenv-switch: $*"; }
+log_err() { log "$*" 1>&2; }
+
+[[ -x "$(command -v direnv)" ]] || (log_err "direnv not found" && exit 1)
+
+remove_file() {
+    local target_file="$1"
+
+    [[ -f "$target_file" ]] && rm -f "$target_file" && log "removed $target_file"
+}
+
+remove_link() {
+    local link_file="$1"
+
+    [[ -L "$link_file" ]] && rm -f "$link_file" && log "removed $link_file"
+}
+
+self_path=$(cd "$(dirname "$0")" && pwd -P)
+project_path=$(realpath "$self_path/..")
+
+# dotenv
+curlenv_dotenv="$project_path/.env.curlenv"
+curlenv_dotenv_target="${curlenv_dotenv}.target"
+curlenv_dotenv_target_secret="${curlenv_dotenv_target}.secret"
+
+# run-commands
+curlenv_envrc_target="$project_path/.envrc.curlenv.target"
+curlenv_envrc_target_secret="${curlenv_envrc_target}.secret"
+
+remove_file "$curlenv_dotenv"
+remove_link "$curlenv_dotenv_target"
+remove_link "$curlenv_dotenv_target_secret"
+remove_link "$curlenv_envrc_target"
+remove_link "$curlenv_envrc_target_secret"
