@@ -22,7 +22,7 @@ can be deleted to be replaced by our own. They exist as a starting point for you
 
 | Name              | Description                                                                           |
 | ----------------       | -----------------------------------                                                   |
-| [env/](env)             | `*.envrc` files for [direnv](https://direnv.net).                                     |
+| [env/](env)             | `*.env` and `*.envrc` files for [direnv](https://direnv.net).                                     |
 | [data/](data)           | Static and templated data files.                                                      |
 | [request/](request)     | Requests defined by [curl configuration files](https://curl.se/docs/manpage.html#-K). |
 | [workflow/](workflow) | Compositions using `data` and `request` files.                                        |
